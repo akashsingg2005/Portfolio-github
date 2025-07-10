@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash Kumar Singh - Professional Portfolio</title>
+    <meta name="description" content="Personal professional portfolio showcasing skills, projects, and achievements of Akash Kumar Singh, a Full Stack Developer.">
+    <meta name="keywords" content="portfolio, web development, HTML, CSS, JavaScript, projects, skills, resume, Full Stack Developer">
+    <meta name="author" content="Akash Kumar Singh">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for glow effect in dark mode */
+        .dark .text-glow-on-hover:hover {
+            text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+            transition: text-shadow 0.3s ease-in-out;
+        }
+        .dark .text-glow-on-hover {
+            transition: text-shadow 0.3s ease-in-out;
+        }
+
+        /* Ensure smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Adjust for fixed navigation bar */
+        section {
+            padding-top: 6rem; /* Height of nav + some padding */
+        }
+
+        /* Specific height adjustment for hero section */
+        .min-h-screen-minus-nav {
+            min-height: calc(100vh - 4rem); /* Assuming nav height is approx 4rem (64px) */
+        }
+
+        /* Basic font and background for light theme */
+        body.light {
+            background-color: #f9fafb; /* gray-50 */
+            color: #374151; /* gray-800 */
+        }
+
+        /* Basic font and background for dark theme */
+        body.dark {
+            background-color: #111827; /* gray-900 */
+            color: #f3f4f6; /* gray-100 */
+        }
+    </style>
+</head>
+<body class="font-inter antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-12 transition-colors duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-indigo-600">Akash Kumar Singh</div>
+            <ul class="flex space-x-6 items-center">
+                <li>
+                    <button data-section-id="about" class="nav-link text-lg font-medium transition-colors duration-300 text-gray-600 hover:text-indigo-600">
+                        About
+                    </button>
+                </li>
+                <li>
+                    <button data-section-id="skills" class="nav-link text-lg font-medium transition-colors duration-300 text-gray-600 hover:text-indigo-600">
+                        Skills
+                    </button>
+                </li>
+                <li>
+                    <button data-section-id="projects" class="nav-link text-lg font-medium transition-colors duration-300 text-gray-600 hover:text-indigo-600">
+                        Projects
+                    </button>
+                </li>
+                <li>
+                    <button data-section-id="contact" class="nav-link text-lg font-medium transition-colors duration-300 text-gray-600 hover:text-indigo-600">
+                        Contact
+                    </button>
+                </li>
+                <!-- Theme Toggle Button -->
+                <li>
+                    <button id="theme-toggle" class="ml-4 p-2 rounded-full transition-colors duration-300 bg-gray-200 text-gray-800 hover:bg-gray-300" aria-label="Toggle theme">
+                        <!-- Sun Icon for Light Mode -->
+                        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h1M4 12H3m15.325 5.918l-.707.707M6.343 6.343l-.707-.707m12.728 0l-.707-.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <!-- Moon Icon for Dark Mode (initially hidden) -->
+                        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero/About Section -->
+    <section id="about" class="pt-24 pb-16 flex items-center justify-center min-h-screen-minus-nav bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+        <div class="container mx-auto text-center px-6 md:px-12">
+            <img
+                src="profile.png"
+                alt="Akash Kumar Singh"
+                class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-white shadow-lg object-cover"
+            />
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+                Hi, I'm <span class="text-yellow-300">Akash Kumar Singh</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+                A passionate <span class="font-semibold">Full Stack Developer</span> with a knack for building
+                innovative and user-friendly web applications.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <button data-section-id="projects" class="scroll-button bg-white text-indigo-600 px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+                    View Projects
+                </button>
+                <button data-section-id="contact" class="scroll-button bg-transparent border-2 border-white text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-white hover:text-indigo-600 transition-all duration-300 transform hover:scale-105">
+                    Get In Touch
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">My Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Example Skill Card -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <h3 class="text-2xl font-semibold text-indigo-600 mb-4">Frontend Development</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>React.js</li>
+                        <li>HTML5, CSS3, Tailwind CSS</li>
+                        <li>JavaScript</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <h3 class="text-2xl font-semibold text-indigo-600 mb-4">Backend Development</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Python</li>
+                        <li>RESTful APIs</li>
+                        <li>Authentication & Authorization</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <h3 class="text-2xl font-semibold text-indigo-600 mb-4">Databases & Tools</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>MySQL</li>
+                        <li>GitHub</li>
+                    </ul>
+                </div>
+                <!-- Add more skill cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Example Project Card -->
+                <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <img
+                        src="https://placehold.co/600x400/E0E7FF/4F46E5?text=Project+1"
+                        alt="Project 1"
+                        class="w-full h-48 object-cover"
+                    />
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Project Title One</h3>
+                        <p class="text-gray-700 mb-4">
+                            A brief description of Project One, highlighting its key features and technologies used.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">React</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Node.js</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">MongoDB</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-indigo-600 hover:text-indigo-800 font-medium transition-colors duration-300"
+                            >
+                                View Live
+                            </a>
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-gray-600 hover:text-gray-800 font-medium transition-colors duration-300"
+                            >
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <img
+                        src="https://placehold.co/600x400/E0E7FF/4F46E5?text=Project+2"
+                        alt="Project 2"
+                        class="w-full h-48 object-cover"
+                    />
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Project Title Two</h3>
+                        <p class="text-gray-700 mb-4">
+                            A brief description of Project Two, highlighting its key features and technologies used.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">CSS</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">JavaScript</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-indigo-600 hover:text-indigo-800 font-medium transition-colors duration-300"
+                            >
+                                View Live
+                            </a>
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-gray-600 hover:text-gray-800 font-medium transition-colors duration-300"
+                            >
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <img
+                        src="https://placehold.co/600x400/E0E7FF/4F46E5?text=Project+3"
+                        alt="Project 3"
+                        class="w-full h-48 object-cover"
+                    />
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Project Title Three</h3>
+                        <p class="text-gray-700 mb-4">
+                            A brief description of Project Three, highlighting its key features and technologies used.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Django</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">PostgreSQL</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-indigo-600 hover:text-indigo-800 font-medium transition-colors duration-300"
+                            >
+                                View Live
+                            </a>
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-gray-600 hover:text-gray-800 font-medium transition-colors duration-300"
+                            >
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Get In Touch</h2>
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-lg font-medium text-gray-700 mb-2">
+                            Name
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200"
+                            placeholder="Your Name"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label for="email" class="block text-lg font-medium text-gray-700 mb-2">
+                            Email
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200"
+                            placeholder="your.email@example.com"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label for="message" class="block text-lg font-medium text-gray-700 mb-2">
+                            Message
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200"
+                            placeholder="Your message..."
+                            required
+                        ></textarea>
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105"
+                    >
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center px-6 md:px-12">
+            <p class="mb-4">&copy; <span id="current-year"></span> Akash Kumar Singh. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/akashsingh2005/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
+                    LinkedIn
+                </a>
+                <a href="https://github.com/akashsingg2005" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
+                    GitHub
+                </a>
+                <a href="mailto:akashsingg2005@gmail.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
+                    Email
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const themeToggle = document.getElementById('theme-toggle');
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+            const nav = document.querySelector('nav');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            const scrollButtons = document.querySelectorAll('.scroll-button');
+            const currentYearSpan = document.getElementById('current-year');
+
+            // Set current year in footer
+            currentYearSpan.textContent = new Date().getFullYear();
+
+            // Initialize theme from localStorage or default to 'light'
+            let currentTheme = localStorage.getItem('theme') || 'light';
+
+            // Function to apply theme classes
+            const applyTheme = (theme) => {
+                body.classList.remove('light', 'dark');
+                body.classList.add(theme);
+
+                // Update navigation bar styles
+                if (theme === 'dark') {
+                    nav.classList.remove('bg-white', 'shadow-md');
+                    nav.classList.add('bg-gray-800', 'shadow-lg');
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                    themeToggle.classList.remove('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
+                    themeToggle.classList.add('bg-gray-700', 'text-yellow-300', 'hover:bg-gray-600');
+                } else {
+                    nav.classList.remove('bg-gray-800', 'shadow-lg');
+                    nav.classList.add('bg-white', 'shadow-md');
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                    themeToggle.classList.remove('bg-gray-700', 'text-yellow-300', 'hover:bg-gray-600');
+                    themeToggle.classList.add('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
+                }
+
+                // Update section specific styles based on theme
+                sections.forEach(section => {
+                    if (section.id === 'about') {
+                        if (theme === 'dark') {
+                            section.classList.remove('from-indigo-500', 'to-purple-600', 'text-white');
+                            section.classList.add('from-gray-900', 'to-black', 'text-gray-100');
+                            section.querySelector('h1 span').classList.remove('text-yellow-300');
+                            section.querySelector('h1 span').classList.add('text-yellow-400', 'text-glow-on-hover');
+                            section.querySelector('p').classList.add('text-glow-on-hover');
+                            section.querySelectorAll('.scroll-button')[0].classList.remove('bg-white', 'text-indigo-600', 'hover:bg-gray-100');
+                            section.querySelectorAll('.scroll-button')[0].classList.add('bg-yellow-600', 'text-gray-900', 'hover:bg-yellow-500');
+                            section.querySelectorAll('.scroll-button')[1].classList.remove('border-white', 'text-white', 'hover:bg-white', 'hover:text-indigo-600');
+                            section.querySelectorAll('.scroll-button')[1].classList.add('border-yellow-400', 'text-yellow-400', 'hover:bg-yellow-400', 'hover:text-gray-900');
+                        } else {
+                            section.classList.remove('from-gray-900', 'to-black', 'text-gray-100');
+                            section.classList.add('from-indigo-500', 'to-purple-600', 'text-white');
+                            section.querySelector('h1 span').classList.remove('text-yellow-400', 'text-glow-on-hover');
+                            section.querySelector('h1 span').classList.add('text-yellow-300');
+                            section.querySelector('p').classList.remove('text-glow-on-hover');
+                            section.querySelectorAll('.scroll-button')[0].classList.remove('bg-yellow-600', 'text-gray-900', 'hover:bg-yellow-500');
+                            section.querySelectorAll('.scroll-button')[0].classList.add('bg-white', 'text-indigo-600', 'hover:bg-gray-100');
+                            section.querySelectorAll('.scroll-button')[1].classList.remove('border-yellow-400', 'text-yellow-400', 'hover:bg-yellow-400', 'hover:text-gray-900');
+                            section.querySelectorAll('.scroll-button')[1].classList.add('border-white', 'text-white', 'hover:bg-white', 'hover:text-indigo-600');
+                        }
+                    } else if (section.id === 'skills') {
+                        if (theme === 'dark') {
+                            section.classList.remove('bg-gray-100');
+                            section.classList.add('bg-gray-800');
+                            section.querySelector('h2').classList.remove('text-gray-800');
+                            section.querySelector('h2').classList.add('text-gray-100', 'text-glow-on-hover');
+                            section.querySelectorAll('.bg-white').forEach(card => {
+                                card.classList.remove('bg-white');
+                                card.classList.add('bg-gray-700');
+                                card.querySelector('h3').classList.remove('text-indigo-600');
+                                card.querySelector('h3').classList.add('text-yellow-400', 'text-glow-on-hover');
+                                card.querySelector('ul').classList.remove('text-gray-700');
+                                card.querySelector('ul').classList.add('text-gray-200');
+                                card.querySelectorAll('li').forEach(li => li.classList.add('text-glow-on-hover'));
+                            });
+                        } else {
+                            section.classList.remove('bg-gray-800');
+                            section.classList.add('bg-gray-100');
+                            section.querySelector('h2').classList.remove('text-gray-100', 'text-glow-on-hover');
+                            section.querySelector('h2').classList.add('text-gray-800');
+                            section.querySelectorAll('.bg-gray-700').forEach(card => {
+                                card.classList.remove('bg-gray-700');
+                                card.classList.add('bg-white');
+                                card.querySelector('h3').classList.remove('text-yellow-400', 'text-glow-on-hover');
+                                card.querySelector('h3').classList.add('text-indigo-600');
+                                card.querySelector('ul').classList.remove('text-gray-200');
+                                card.querySelector('ul').classList.add('text-gray-700');
+                                card.querySelectorAll('li').forEach(li => li.classList.remove('text-glow-on-hover'));
+                            });
+                        }
+                    } else if (section.id === 'projects') {
+                        if (theme === 'dark') {
+                            section.classList.remove('bg-white');
+                            section.classList.add('bg-gray-900');
+                            section.querySelector('h2').classList.remove('text-gray-800');
+                            section.querySelector('h2').classList.add('text-gray-100', 'text-glow-on-hover');
+                            section.querySelectorAll('.bg-gray-50').forEach(card => {
+                                card.classList.remove('bg-gray-50');
+                                card.classList.add('bg-gray-800');
+                                card.querySelector('h3').classList.remove('text-gray-800');
+                                card.querySelector('h3').classList.add('text-gray-100', 'text-glow-on-hover');
+                                card.querySelector('p').classList.remove('text-gray-700');
+                                card.querySelector('p').classList.add('text-gray-300', 'text-glow-on-hover');
+                                card.querySelectorAll('a').forEach(link => {
+                                    if (link.textContent.includes('Live')) { // Assuming 'View Live' link
+                                        link.classList.remove('text-indigo-600', 'hover:text-indigo-800');
+                                        link.classList.add('text-yellow-400', 'hover:text-yellow-300', 'text-glow-on-hover');
+                                    } else if (link.textContent.includes('GitHub')) { // Assuming 'GitHub' link
+                                        link.classList.remove('text-gray-600', 'hover:text-gray-800');
+                                        link.classList.add('text-gray-400', 'hover:text-gray-300', 'text-glow-on-hover');
+                                    }
+                                });
+                            });
+                        } else {
+                            section.classList.remove('bg-gray-900');
+                            section.classList.add('bg-white');
+                            section.querySelector('h2').classList.remove('text-gray-100', 'text-glow-on-hover');
+                            section.querySelector('h2').classList.add('text-gray-800');
+                            section.querySelectorAll('.bg-gray-800').forEach(card => {
+                                card.classList.remove('bg-gray-800');
+                                card.classList.add('bg-gray-50');
+                                card.querySelector('h3').classList.remove('text-gray-100', 'text-glow-on-hover');
+                                card.querySelector('h3').classList.add('text-gray-800');
+                                card.querySelector('p').classList.remove('text-gray-300', 'text-glow-on-hover');
+                                card.querySelector('p').classList.add('text-gray-700');
+                                card.querySelectorAll('a').forEach(link => {
+                                    if (link.textContent.includes('Live')) {
+                                        link.classList.remove('text-yellow-400', 'hover:text-yellow-300', 'text-glow-on-hover');
+                                        link.classList.add('text-indigo-600', 'hover:text-indigo-800');
+                                    } else if (link.textContent.includes('GitHub')) {
+                                        link.classList.remove('text-gray-400', 'hover:text-gray-300', 'text-glow-on-hover');
+                                        link.classList.add('text-gray-600', 'hover:text-gray-800');
+                                    }
+                                });
+                            });
+                        }
+                    } else if (section.id === 'contact') {
+                        if (theme === 'dark') {
+                            section.classList.remove('bg-gray-100');
+                            section.classList.add('bg-gray-800');
+                            section.querySelector('h2').classList.remove('text-gray-800');
+                            section.querySelector('h2').classList.add('text-gray-100', 'text-glow-on-hover');
+                            section.querySelector('.max-w-xl').classList.remove('bg-white');
+                            section.querySelector('.max-w-xl').classList.add('bg-gray-700');
+                            section.querySelectorAll('label').forEach(label => label.classList.add('text-gray-200', 'text-glow-on-hover'));
+                            section.querySelectorAll('input, textarea').forEach(input => {
+                                input.classList.remove('border-gray-300', 'text-gray-800', 'placeholder-gray-500');
+                                input.classList.add('bg-gray-600', 'border-gray-500', 'text-gray-100', 'placeholder-gray-400');
+                            });
+                            section.querySelector('button[type="submit"]').classList.remove('bg-indigo-600', 'text-white');
+                            section.querySelector('button[type="submit"]').classList.add('bg-yellow-600', 'text-gray-900', 'hover:bg-yellow-500');
+                        } else {
+                            section.classList.remove('bg-gray-800');
+                            section.classList.add('bg-gray-100');
+                            section.querySelector('h2').classList.remove('text-gray-100', 'text-glow-on-hover');
+                            section.querySelector('h2').classList.add('text-gray-800');
+                            section.querySelector('.max-w-xl').classList.remove('bg-gray-700');
+                            section.querySelector('.max-w-xl').classList.add('bg-white');
+                            section.querySelectorAll('label').forEach(label => label.classList.remove('text-gray-200', 'text-glow-on-hover'));
+                            section.querySelectorAll('input, textarea').forEach(input => {
+                                input.classList.remove('bg-gray-600', 'border-gray-500', 'text-gray-100', 'placeholder-gray-400');
+                                input.classList.add('border-gray-300', 'text-gray-800', 'placeholder-gray-500');
+                            });
+                            section.querySelector('button[type="submit"]').classList.remove('bg-yellow-600', 'text-gray-900', 'hover:bg-yellow-500');
+                            section.querySelector('button[type="submit"]').classList.add('bg-indigo-600', 'text-white');
+                        }
+                    }
+                });
+
+                // Update navigation link colors and glow
+                navLinks.forEach(link => {
+                    const sectionId = link.dataset.sectionId;
+                    if (link.classList.contains('active-nav-link')) {
+                        if (theme === 'dark') {
+                            link.classList.remove('text-indigo-600', 'border-indigo-600');
+                            link.classList.add('text-yellow-400', 'border-yellow-400', 'text-glow-on-hover');
+                        } else {
+                            link.classList.remove('text-yellow-400', 'border-yellow-400', 'text-glow-on-hover');
+                            link.classList.add('text-indigo-600', 'border-indigo-600');
+                        }
+                    } else {
+                        if (theme === 'dark') {
+                            link.classList.remove('text-gray-600', 'hover:text-indigo-600');
+                            link.classList.add('text-gray-300', 'hover:text-yellow-400', 'text-glow-on-hover');
+                        } else {
+                            link.classList.remove('text-gray-300', 'hover:text-yellow-400', 'text-glow-on-hover');
+                            link.classList.add('text-gray-600', 'hover:text-indigo-600');
+                        }
+                    }
+                });
+
+                // Update footer text glow
+                document.querySelector('footer p').classList.toggle('text-glow-on-hover', theme === 'dark');
+                document.querySelectorAll('footer a').forEach(link => link.classList.toggle('text-glow-on-hover', theme === 'dark'));
+            };
+
+            // Apply initial theme
+            applyTheme(currentTheme);
+
+            // Theme toggle event listener
+            themeToggle.addEventListener('click', () => {
+                currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+                localStorage.setItem('theme', currentTheme);
+                applyTheme(currentTheme);
+            });
+
+            // Smooth scrolling for navigation links and buttons
+            document.querySelectorAll('.nav-link, .scroll-button').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const sectionId = event.target.dataset.sectionId;
+                    const targetSection = document.getElementById(sectionId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Intersection Observer for active navigation link highlighting
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 // Adjust as needed
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Remove active class from all nav links
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-nav-link');
+                            if (currentTheme === 'dark') {
+                                link.classList.remove('text-yellow-400', 'border-yellow-400');
+                                link.classList.add('text-gray-300', 'hover:text-yellow-400');
+                            } else {
+                                link.classList.remove('text-indigo-600', 'border-indigo-600');
+                                link.classList.add('text-gray-600', 'hover:text-indigo-600');
+                            }
+                        });
+
+                        // Add active class to the current section's nav link
+                        const activeNavLink = document.querySelector(`.nav-link[data-section-id="${entry.target.id}"]`);
+                        if (activeNavLink) {
+                            activeNavLink.classList.add('active-nav-link');
+                            if (currentTheme === 'dark') {
+                                activeNavLink.classList.remove('text-gray-300', 'hover:text-yellow-400');
+                                activeNavLink.classList.add('text-yellow-400', 'border-b-2', 'border-yellow-400');
+                            } else {
+                                activeNavLink.classList.remove('text-gray-600', 'hover:text-indigo-600');
+                                activeNavLink.classList.add('text-indigo-600', 'border-b-2', 'border-indigo-600');
+                            }
+                        }
+                    }
+                });
+            };
+
+            const sectionObserver = new IntersectionObserver(observerCallback, observerOptions);
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
